@@ -46,12 +46,18 @@ public class Vehiculos extends javax.swing.JInternalFrame {
     public boolean estanLlenos () {
         int index = documento.getSelectedIndex();
         if (index == 0) return false;
-        if(  
-              patente.getText().isEmpty() 
-             && marca.getText().isEmpty()
-             && modeloCarro.getText().isEmpty()
-             && serialMotor.getText().isEmpty()
-        ){
+        if(patente.getText().isEmpty()) {
+            return false;
+        }
+        
+        if(marca.getText().isEmpty()) {
+            return false;
+        }
+        
+        if(modeloCarro.getText().isEmpty()) {
+            return false;
+        }
+        if(serialMotor.getText().isEmpty()) {
             return false;
         }
         

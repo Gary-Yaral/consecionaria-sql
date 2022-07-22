@@ -138,7 +138,6 @@ public class Sucursales extends javax.swing.JInternalFrame {
             try {
                 String buscar = "SELECT*FROM sucursal INNER JOIN vendedor ON vendedor.`nro_sucursal` = sucursal.`id` WHERE sucursal.`nro`='"+nroSeleccionado+"'";
                 rs = con.getData(buscar);
-                System.out.println(nroSeleccionado);
                
                 boolean tieneDependencia = false;
                 while(rs.next()) {
@@ -178,7 +177,7 @@ public class Sucursales extends javax.swing.JInternalFrame {
     public void buscarRegistro() {
         String suc = textoBuscar.getText();
         if(!suc.isEmpty()) {
-            String sql1 = "SELECT * FROM sucursal WHERE nro='"+suc+"', OR nombre='"+suc+"', OR domicilio='"+suc+"', OR telefono='"+suc+"'";
+            String sql1 = "SELECT * FROM sucursal WHERE nro='"+suc+"' OR nombre='"+suc+"' OR domicilio='"+suc+"' OR telefono='"+suc+"'";
             rs = con.getData(sql1);           
             llenarTabla(rs);
 

@@ -103,6 +103,9 @@ public class InicioSesion extends javax.swing.JFrame {
 
     private void accessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accessActionPerformed
         try {
+            // El sistema validara si el usuario se encuentra en la tabla de administradores
+            // Si lo encuentran en esa tabla entonces le pasa un true al contructor del panel de control
+            // En caso de encontrarlo en la tabla de usuarios le enviará un false porque no es administrador
             
             String user = usuario.getText();
             String pass = password.getText();         
